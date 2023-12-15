@@ -1,0 +1,62 @@
+.message-bar{
+    background-color: #00A859;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.message-bar-title{
+    margin: 0;
+}
+.close-icon{
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+    .message-bar-title {
+      font-size: 14px;
+    }
+    
+}
+@media screen and (max-width: 650px) {
+    .message-bar{
+        background-color: #00A859;
+        margin: 0;
+        padding: 5px;
+        display: flex;
+        justify-content: left;
+        width: 100%;
+    }
+    .message-bar-title {
+      font-size: 12px;
+    }
+    .close-icon{
+        position: fixed;
+        top: 3px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 500px) {
+    
+    .message-bar-title {
+      font-size: 10px;
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    
+    .message-bar-title {
+      font-size: 8px;
+    }
+    .close-icon{
+        position: fixed;
+        top: 2px;
+        right: 10px;
+        cursor: pointer;
+    }
+    
+}
