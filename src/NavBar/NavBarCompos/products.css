@@ -1,0 +1,20 @@
+.product-card{
+    border-radius: 10px;
+    background-color: #00A859;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+}
+.product-image{
+
+  border-radius: 50%;
+  width: 200px;
+  justify-content: center;
+
+}
+.add-to-cart-icon{
+    margin-left: 10px;
+}
+.icons{
+    margin: 10px;
+}

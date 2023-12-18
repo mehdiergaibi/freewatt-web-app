@@ -1,7 +1,7 @@
 import MessageBar from "./MessageBar"
 import NavBar from "./NavBar";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Products from "./NavBarCompos/Products";
+import AllProducts from "./NavBarCompos/AllProducts";
 import About from "./NavBarCompos/About";
 import Contact from "./NavBarCompos/Contact";
 import Search from "./NavBarCompos/Search";
@@ -18,7 +18,7 @@ const Nav = () => {
                 <NavBar />
                 <Routes>
                     <Route exact path="/" />
-                    <Route path="/all-products" element={<Products/>} />
+                    <Route path="/all-products" element={<AllProducts/>} />
                     <Route path="/about-us" element={<About/>} />
                     <Route path="/contact-us" element={<Contact/>} />
                     <Route path="/search" element={<Search/>} />     
