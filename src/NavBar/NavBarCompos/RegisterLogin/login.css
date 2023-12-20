@@ -1,0 +1,22 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 10px;
+    background-color: #00A859;
+    padding: 10px;
+    border-radius: 10px;
+}
+input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+button{
+    background-color: floralwhite;
+    width: 100px;
+    margin-left: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
