@@ -6,8 +6,11 @@ import { CgProfile } from "react-icons/cg";
 import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import "./nav-bar.css";
+import { useStateValue } from "../ContextProvider";
 
 const NavBar = () => {
+  const [{ basket }, dispach] = useStateValue();
+  //console.log("lenght is: ", basket.length) //length
   const [screenSize, setScreenSize] = useState(window.innerWidth);
   useEffect(() => {
     const handleResizer = () => setScreenSize(window.innerWidth); //update screen size
@@ -54,12 +57,14 @@ const NavBar = () => {
           <Link to="/wishes" className="nav-item-list-link">
             <FaRegHeart className="icon" />
             {screenSize > 900 && "Wishlist"}
+            
           </Link>
         </li>
         <li className="nav-item-list">
           <Link to="/cart" className="nav-item-list-link">
             <IoCartOutline className="icon" />
-            {screenSize > 900 && "Cart"}
+            {screenSize > 900 && "Cart "}
+            <span>{basket?.length}</span>
           </Link>
         </li>
       </ul>
