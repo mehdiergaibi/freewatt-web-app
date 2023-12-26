@@ -18,7 +18,8 @@ function Products(props) {
         price : props.price,
         title: props.title,
         quantite : props.quantite,
-        image: props.image
+        image: props.image,
+        numberOf: props.numberOf
       }
     })
   }

@@ -1,0 +1,45 @@
+.product{
+    border-radius: 10px;
+    background-color: #00A859;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+}
+.image{
+
+  border-radius: 50%;
+  width: 200px;
+  justify-content: center;
+  margin-bottom: 10px;
+
+}
+.icons{
+    margin: 5px;
+}
+.plus-icon, .mines-icon{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.number-of-products {
+    margin: 5px;
+}
+.product-title{
+    font-weight: bold;
+    font-size: medium;
+}
+.remove-btn{
+    width: fit-content;
+    padding: 5px;
+    background-color: red;
+    border-radius: 5px;
+    box-shadow: gray 3;
+    font-weight: bold;
+    cursor: pointer;
+}
+.cart-left{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 70%;
+    justify-content: center;
+}
