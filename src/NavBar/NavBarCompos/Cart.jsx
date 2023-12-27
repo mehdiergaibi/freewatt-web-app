@@ -10,7 +10,7 @@ const Cart = (props) => {
             {
                 basket.map((product) => 
                    (
-                    <CartProduct id={product.id} title={product.title} image={product.image} />
+                    <CartProduct id={product.id} key={product.id} title={product.title} image={product.image} />
                 ))
             }
         </div>

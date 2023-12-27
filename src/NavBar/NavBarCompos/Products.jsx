@@ -5,31 +5,45 @@ import "./products.css";
 import { useStateValue } from "../../ContextProvider";
 
 function Products(props) {
-
   const [{ basket }, dispach] = useStateValue();
 
-  console.log("basket is this: ",basket);
+  //console.log("basket is this: ",basket);
 
   const addToCart = () => {
     dispach({
-      type : "ADD_TO_BASKET",
-      item : {
+      type: "ADD_TO_BASKET",
+      item: {
         id: props.id,
-        price : props.price,
+        price: props.price,
         title: props.title,
-        quantite : props.quantite,
+        quantite: props.quantite,
         image: props.image,
-        numberOf: props.numberOf
-      }
-    })
+        numberOf: props.numberOf,
+      },
+    });
+  };
+  let values;
+  let existOrNo;
+  basket.map((item) => (values = Object.values(item)));
+  console.log(values);
+  
+  if (values?.includes(props.id)) {
+    existOrNo = 1;
+  } else {
+    existOrNo = 0;
   }
-
+  //isExist()
   return (
     <div className="product-card">
       <h4 className="quantite">{props.quantite} left</h4>
       <div className="icons">
         <FcLike className="like-icon" />
-        <TbShoppingCartPlus className="add-to-cart-icon" onClick={addToCart} />
+        <TbShoppingCartPlus
+          className="add-to-cart-icon"
+          onClick={
+            existOrNo == 0 ? addToCart : () => alert("PRODUCT IS ALREADY IN CART!!!")
+          }
+        />
       </div>
 
       <img src={props.image} className="product-image" />
