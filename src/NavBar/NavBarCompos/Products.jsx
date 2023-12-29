@@ -6,7 +6,7 @@ import { useStateValue } from "../../ContextProvider";
 
 function Products(props) {
   const [{ basket }, dispach] = useStateValue();
-
+  const [{ wishes }, dispachWishes] = useStateValue();
   //console.log("basket is this: ",basket);
 
   const addToCart = () => {
@@ -22,26 +22,58 @@ function Products(props) {
       },
     });
   };
-  let values;
-  let existOrNo;
-  basket.map((item) => (values = Object.values(item)));
-  console.log(values);
-  
-  if (values?.includes(props.id)) {
-    existOrNo = 1;
+  const addToWishes = () => {
+    dispachWishes({
+      type: "ADD_TO_WISHES",
+      item: {
+        id: props.id, 
+        price: props.price,
+        title: props.title,
+        quantite: props.quantite,
+        image: props.image,
+        numberOf: props.numberOf,
+      },
+    });
+  };
+  let valuesCart;
+  let existOrNoCart;
+  basket.map((item) => (valuesCart = Object.values(item)));
+  //console.log(values);
+
+  if (valuesCart?.includes(props.id)) {
+    existOrNoCart = 1;
   } else {
-    existOrNo = 0;
+    existOrNoCart = 0;
+  }
+  let valuesWishes;
+  let existOrNoWishes;
+  wishes.map((item) => (valuesWishes = Object.values(item)));
+  //console.log(values);
+
+  if (valuesWishes?.includes(props.id)) {
+    existOrNoWishes = 1;
+  } else {
+    existOrNoWishes = 0;
   }
   //isExist()
   return (
     <div className="product-card">
       <h4 className="quantite">{props.quantite} left</h4>
       <div className="icons">
-        <FcLike className="like-icon" />
+        <FcLike
+          className="like-icon"
+          onClick={
+            existOrNoWishes == 0
+              ? addToWishes
+              : () => alert("PRODUCT IS ALREADY IN wishes!!!")
+          }
+        />
         <TbShoppingCartPlus
           className="add-to-cart-icon"
           onClick={
-            existOrNo == 0 ? addToCart : () => alert("PRODUCT IS ALREADY IN CART!!!")
+            existOrNoCart == 0
+              ? addToCart
+              : () => alert("PRODUCT IS ALREADY IN CART!!!")
           }
         />
       </div>
